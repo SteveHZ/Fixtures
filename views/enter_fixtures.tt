@@ -1,0 +1,38 @@
+
+<form method="post" action="/do_fixtures">
+<input type="hidden" name="sport" value= "[% sport %]">
+
+<h2 id = "header">Enter [% sport %] Fixtures </h2>
+
+[% FOREACH league IN leagues %]
+    <h3>[% league %]</h3>
+    [% count = 0 %]
+    [% max_games = teams.$league.size / 2 %]
+
+    [% WHILE count < max_games %]
+        [% IF (sport == "Rugby" OR sport == "Euro") %]
+            [% INCLUDE 'rugby_dates.tt' %]
+        [% END %]
+        <div>
+            <select name = "[% league %] h[% count %]" class = "home">
+                <option value="" selected disabled>Home</option>
+                [% FOREACH team IN teams.$league %]
+                    <option value = "[% team %]">[% team %]</option>
+                [% END %]
+            </select>
+            V.
+            <select name = "[% league %] a[% count %]" class = "away">
+                <option value="" selected disabled>Away</option>
+                [% FOREACH team IN teams.$league %]
+                    <option value = "[% team %]">[% team %]</option>
+                [% END %]
+            </select>
+            <br/>
+        </div>
+
+        [% count = count + 1 %]
+    [% END %]
+[% END %]
+
+<input type = "submit" value = "OK" />
+</form>

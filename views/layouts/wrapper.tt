@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>[% title %]</title>
+		<link rel="stylesheet" type="text/css" href="[% request.uri_base %]/css/mine.css" />
+<!--   		<script src="[% request.uri_base %]/javascripts/StripeTables.js"></script>-->
+	</head>
+
+	<body>
+		<div class="content">
+			[% content %]
+		</div>
+
+		<div id="footer">
+			<strong id="footer">
+				<br/>[% title %]
+				<br/>&copy; 2016 - Zappa. All rights reserved.
+			</strong>
+		</div>
+	</body>
+</html>

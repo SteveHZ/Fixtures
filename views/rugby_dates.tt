@@ -1,0 +1,10 @@
+
+<select name ="[% league %] date[% count %]" class = "date">
+    [% FOR day IN [0..7] %]
+        <option value = "[% date.format ("%d/%m/%y") %]" [% IF day == 0 %]selected[% END %] >
+            [% date.format ("%d/%m/%y") %]
+        </option>
+        [% date = date + 1 %]
+    [% END %]
+    [% date = date - 8 %]
+</select>

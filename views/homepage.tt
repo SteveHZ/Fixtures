@@ -1,0 +1,13 @@
+<h2>Enter Fixtures</h2>
+<a class = "noline" href="/fixtures/football">
+	<input type="button" class="indent" value="Football"/>
+</a>
+<br/><br/>
+<a class = "noline" href="/fixtures/euro">
+	<input type="button" class="indent" value="Euro Football" />
+</a>
+<br/><br/>
+<a class = "noline" href="/fixtures/rugby">
+	<input type="button" class="indent" value="Rugby" />
+</a>
+<br/>
