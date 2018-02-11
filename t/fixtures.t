@@ -1,16 +1,24 @@
 #!	C:/Strawberry/perl/bin
 
-#	fixtures.t 08-09/07/17
+#	fixtures.t 08-09/07/17, 11/02/18
 
 use strict;
 use warnings;
-use Test::More tests => 2;
+use Test::More tests => 3;
 
 use lib '../lib';
 use lib '../../Football';
 
 use Rugby_Model;
 use Euro_Model;
+
+subtest 'use app' => sub {
+	plan tests => 2;
+
+	use_ok 'Fixtures';
+	my $app = Fixtures->to_app;
+	isa_ok( $app, 'CODE', 'Got app' );
+};
 
 subtest 'Rugby Constructor' => sub {
 	my $rugby = Rugby_Model->new ();
